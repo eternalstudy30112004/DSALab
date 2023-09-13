@@ -1,4 +1,5 @@
 #include <stdio.h>
+using namespace std;
 
 int main()
 {
@@ -7,10 +8,11 @@ int main()
     scanf("%d", &n);
 
     printf("The sum of first %d Natural numbers is : ", n);
-    while (n > 0)
+    for (unsigned int i = 1; i <= n; i++)
     {
-        sum += n--;
+        sum += i;
     }
+
     printf("%d\n", sum);
     return 0;
 }

@@ -1,0 +1,195 @@
+MIS : 612203036
+
+NAME: Aditya Sharad Deshmukh
+
+DIVISION: 1 S-2
+
+Q1 (Solution)
+
+#include <stdio.h>
+int main()
+{
+    char character;
+    int integerNum;
+    unsigned int uIntegerNum;
+    short shortInteger;
+    unsigned short int uShortInteger;
+    float floatingNum;
+    double doubleNum;
+    long int longInteger;
+    unsigned long int uLongInteger;
+    long long int longLongInteger;
+    unsigned long long int uLongLongInteger;
+    printf("Size of char: %d bytes\n", sizeof(character));
+    printf("Size of integer: %d bytes\n", sizeof(integerNum));
+    printf("Size of unsigned integer: %d bytes\n", sizeof(uIntegerNum));
+    printf("Size of short integer: %d bytes\n", sizeof(shortInteger));
+    printf("Size of unsigned short Integer: %d bytes\n", sizeof(uShortInteger));
+    printf("Size of floating number: %d bytes\n", sizeof(floatingNum));
+    printf("Size of double number: %d bytes\n", sizeof(doubleNum));
+    printf("Size of long Integer: %d bytes\n", sizeof(longInteger));
+    printf("Size of unsigned long Integer: %d bytes\n", sizeof(uLongInteger));
+    printf("Size of long long Integer: %d bytes\n", sizeof(longLongInteger));
+    printf("Size of unsigned long long Integer: %d bytes\n", sizeof(uLongLongInteger));
+    return 0;
+}
+
+
+Q2 (Solution)
+
+#include <stdio.h>
+int main()
+{
+    int a, b, c;
+    int largest;
+    scanf("%d%d%d", &a, &b, &c);
+    largest = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+    printf("Largest number is %d", largest);
+    return 0;
+}
+
+
+Q3-a (Solution)
+
+#include <stdio.h>
+int isVowel(char c)
+{
+    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+        return 1;
+    else
+        return 0;
+}
+int main()
+{
+    char a;
+    scanf("%c", &a);
+    if (isVowel(a))
+        printf("Character is vowel");
+    else
+        printf("Character is consonant");
+    return 0;
+}
+
+
+Q3-b (Solution)
+
+#include <stdio.h>
+int main()
+{
+    char a;
+    scanf("%c", &a);
+    switch ((int)a)
+    {
+    case 97:
+    case 101:
+    case 105:
+    case 117:
+    case 111:
+    case 65:
+    case 69:
+    case 73:
+    case 79:
+    case 85:
+        printf("Character is Vowel");
+        break;
+    default:
+        printf("Character is Consonant");
+        break;
+    }
+    return 0;
+}
+
+Q4 (Solution)
+
+#include <stdio.h>
+double dearnessAllowance(long int salary)
+{
+    short percent = 0;
+    if (salary >= 10000 && salary <= 20000)
+        percent = 10;
+    else if (salary <= 50000 && salary > 10000)
+        percent = 15;
+    else if (salary <= 100000 && salary > 50000)
+        percent = 20;
+    return (float)(salary)*percent / 100;
+}
+int main()
+{
+    long int salary;
+    scanf("%ld", &salary);
+
+    double da = dearnessAllowance(salary);
+    printf("Dearness Allowance is : %f\n", da);
+    printf("Total Salary Becomes is : %f", da + salary);
+    return 0;
+}
+
+Q5 (Solution)
+
+#include <stdio.h>
+int main()
+{
+    short day;
+    scanf("%hd", &day);
+    switch (day)
+    {
+    case 1:
+        printf("Monday");
+        break;
+    case 2:
+        printf("Tuesday");
+        break;
+    case 3:
+        printf("Wednesday");
+        break;
+    case 4:
+        printf("Thursday");
+        break;
+    case 5:
+        printf("Friday");
+        break;
+    case 6:
+        printf("Saturday");
+        break;
+    case 7:
+        printf("Sunday");
+        break;
+        return 0;
+    }
+}
+
+Q6 (Solution)
+
+#include <stdio.h>
+#define PI 3.14159265
+double area(int r)
+{
+    return PI * r * r;
+}
+double circumfernce(int r)
+{
+    return PI * 2 * r;
+}
+int main()
+{
+    int r;
+    scanf("%d", &r);
+    printf("Area of circle with given r is %f sq. units\n", area(r));
+    printf("Circumference of circle with given r is %f units", circumfernce(r));
+    return 0;
+}
+
+Q7 (Solution)
+
+#include <stdio.h>
+double toCelcius(double fahr)
+{
+    return (fahr - 32) * 5 / 9;
+}
+int main()
+{
+    double f = 98.5;
+    double celcius = toCelcius(f);
+    printf("%f degree fahrenheit ==> %f degree celcius", f, celcius);
+    return 0;
+}
