@@ -1,0 +1,429 @@
+MIS : 612203036
+
+NAME: Aditya Sharad Deshmukh
+
+DIVISION: 1 S-2
+
+Q1_a (Solution)
+
+#include <stdio.h>
+
+int main()
+{
+    unsigned int n, sum = 0;
+    printf("Enter n to calculate sum upto n natural numbers : ");
+    scanf("%d", &n);
+
+    printf("The sum of first %d Natural numbers is : ", n);
+    while (n > 0)
+    {
+        sum += n--;
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+
+Q1_b (Solution)
+
+#include <stdio.h>
+using namespace std;
+
+int main()
+{
+    unsigned int n, sum = 0;
+    printf("Enter n to calculate sum upto n natural numbers : ");
+    scanf("%d", &n);
+
+    printf("The sum of first %d Natural numbers is : ", n);
+    for (unsigned int i = 1; i <= n; i++)
+    {
+        sum += i;
+    }
+
+    printf("%d\n", sum);
+    return 0;
+}
+
+
+Q2 (Solution)
+
+#include <stdio.h>
+void printChars(short start, short end)
+{
+    for (short i = start; i < end; i++)
+    {
+        printf("%c ", i);
+    }
+    printf("\n");
+}
+int main()
+{
+    printf("Lowercase alphabets: ");
+    printChars(97, 97 + 26);
+    printf("Uppercase alphabets: ");
+    printChars(65, 65 + 26);
+    return 0;
+}
+
+
+Q3 (Solution)
+
+#include <stdio.h>
+int evenSum(int k)
+{
+    int sum = 0;
+    int pos = 0;
+    while (k > 0)
+    {
+        if (pos++ % 2 == 0)
+            sum += k % 10;
+        k /= 10;
+    }
+    return sum;
+}
+int main()
+{
+    int k;
+    printf("Enter a number to get sum of digits at even locations : ");
+    scanf("%d", &k);
+    printf("The sum of digits at even position is : %d", evenSum(k));
+    return 0;
+}
+
+
+Q4 (Solution)
+
+#include <stdio.h>
+int getOnesBinary(int decimal)
+{
+    int digit = 0, counter = 0;
+    while (decimal > 0)
+    {
+        digit = decimal % 2;
+        if (digit == 1)
+            counter += digit;
+        decimal /= 2;
+    }
+    return counter;
+}
+int main()
+{
+    int decimal;
+    printf("Enter a number to get number of ones in its binary format : ");
+    scanf("%d", &decimal);
+    printf("The number of ones are : %d", getOnesBinary(decimal));
+    return 0;
+}
+
+
+Q5 (Solution)
+
+#include <stdio.h>
+
+int main()
+{
+    char c;
+    printf("Enter a character : \n");
+    scanf("%c", &c);
+    if (c >= 65 && c <= 65 + 26)
+        printf("Changed case : %c", c + 26 + 6);
+    else if (c >= 97 && c <= 97 + 26)
+        printf("Changed case : %c", c - 26 - 6);
+    else
+        printf("Character not a alphabet : %c", c);
+    return 0;
+}
+
+
+Q6_a (Solution)
+
+#include <stdio.h>
+void printSpaces(short space)
+{
+    for (short i = 0; i < space; i++)
+    {
+        printf(" ");
+    }
+}
+void pattern(short n)
+{
+    short stars, total_spaces = (2 * n + 1) * 2;
+    for (short i = 0; i < n; i++)
+    {
+        stars = 2 * (i) + 1;
+        printSpaces(total_spaces / 2 - stars);
+        for (short j = 0; j < stars; j++)
+        {
+            printf("%s ", "*");
+        }
+        printSpaces(total_spaces / 2 - stars);
+        printf("\n");
+    }
+}
+int main()
+{
+    short n;
+    scanf("%hd", &n);
+    pattern(n);
+    return 0;
+}
+
+
+Q6_b (Solution)
+
+#include <stdio.h>
+
+void floydPattern(short n)
+{
+    short counter = 1;
+    for (short i = 0; i < n; i++)
+    {
+        for (short j = 0; j < i + 1; j++)
+        {
+            printf("%d ", counter++);
+        }
+        printf("\n");
+    }
+}
+int main()
+{
+    short n;
+    scanf("%hd", &n);
+    floydPattern(n);
+    return 0;
+}
+
+
+Q6_c (Solution)
+
+#include <stdio.h>
+void printSpaces(short space)
+{
+    for (short i = 0; i < space; i++)
+    {
+        printf(" ");
+    }
+}
+void pattern(short n)
+{
+    short total_spaces = n * 2 - 1;
+    short dig = 0;
+    for (short i = 0; i < n; i++)
+    {
+        for (short j = 0; j < i; j++)
+        {
+
+            printf("%hd", dig);
+            dig = dig == 0 ? 1 : 0;
+        }
+        printSpaces(total_spaces - (i + 1) * 2);
+        dig = 0;
+        for (short j = 0; j < i; j++)
+        {
+
+            printf("%hd", dig);
+            dig = dig == 0 ? 1 : 0;
+        }
+        printf("\n");
+    }
+}
+int main()
+{
+    short n;
+    scanf("%hd", &n);
+    pattern(n);
+    return 0;
+}
+
+
+Q6_d (Solution)
+
+
+#include <stdio.h>
+unsigned long int factorial(int k)
+{
+    return (k == 0) ? 1 : k * factorial(k - 1);
+}
+unsigned long int ncr(int n, int r)
+{
+    if (n == r)
+        return 1;
+    else if (r == 1)
+        return n;
+    return factorial(n) / (factorial(n - r) * factorial(r));
+}
+void printSpaces(short space)
+{
+    for (short i = 0; i < space; i++)
+    {
+        printf(" ");
+    }
+}
+void pascalPattern(short n)
+{
+    short total_spaces = (2 * n + 1) * 2;
+    for (short i = 0; i < n; i++)
+    {
+        printSpaces(total_spaces / 2 - 2 * (i));
+        printSpaces(i);
+        for (short j = 0; j <= i; j++)
+        {
+            printf("%ld ", ncr(i, j));
+        }
+        printSpaces(total_spaces / 2);
+        printf("\n");
+    }
+}
+int main()
+{
+    short n;
+    scanf("%hd", &n);
+    pascalPattern(n);
+    return 0;
+}
+
+Q7 (Solution)
+
+#include <stdio.h>
+int gcd(int m, int n)
+{
+    int min = m > n ? n : m;
+    int r = 1;
+    for (int i = 2; i <= min; i++)
+    {
+        if (m % i == 0 && n % i == 0)
+            r = i;
+    }
+    return r;
+}
+int lcm(int m, int n)
+{
+    int min, max;
+    if (m > n)
+    {
+        max = m;
+        min = n;
+    }
+    else
+    {
+        max = n;
+        min = m;
+    }
+    int multiple = max;
+    int r = 1;
+    while (r == 1)
+    {
+        if (multiple % min == 0)
+            r = multiple;
+        multiple += max;
+    }
+    return r;
+}
+int main()
+{
+    int m = 26;
+    int n = 65;
+    printf("gcd %d\n", gcd(m, n));
+    printf("lcm %d\n", lcm(m, n));
+
+    return 0;
+}
+
+
+Q8 (Solution)
+
+#include <stdio.h>
+int isPrime(int k)
+{
+    int r = 1;
+    if (k == 1)
+        r = 0;
+    for (int i = 2; i < k; i++)
+    {
+        if (k % i == 0)
+            r = 0;
+    }
+
+    return r;
+}
+int main()
+{
+    for (int i = 1; i <= 100; i++)
+    {
+        if (isPrime(i))
+            printf("%d ", i);
+    }
+
+    return 0;
+}
+
+
+Q9 (Solution)
+
+#include <stdio.h>
+#define PI 3.1415926
+double pow(double x, double y)
+{
+    if (y == 0)
+        return 1;
+
+    double r = 1;
+    for (int i = 0; i < y; i++)
+    {
+        r *= x;
+    }
+    return r;
+}
+double toRadians(double degrees)
+{
+    double radians = degrees * PI / 180;
+    return radians;
+}
+unsigned long int factorial(int n)
+{
+    if (n == 0)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+double powerCos(double radians, int n)
+{
+    double sum = 0;
+    for (short i = 0; i < n * 2; i += 2)
+    {
+        sum += pow(-1, (double)i / 2) * pow(radians, (double)i) / factorial(i);
+    }
+    return sum;
+}
+double powerSine(double radians, int n)
+{
+    double sum = 0;
+    for (short i = 1; i < n * 2; i += 2)
+    {
+        sum += pow(-1, (double)(i / 2)) * pow(radians, (double)i) / factorial(i);
+    }
+    return sum;
+}
+double powerE(double x, int n)
+{
+    double sum = 0;
+    for (short i = 0; i < n; i += 1)
+    {
+        sum += pow(x, (double)i) / factorial(i);
+    }
+    return sum;
+}
+
+int main()
+{
+    double degrees = 30;
+    double x = 1.0;
+    int n = 7;
+    double cosineSum = powerCos(toRadians(degrees), n);
+    double sineSum = powerSine(toRadians(degrees), n);
+    double eSum = powerE(x, n);
+    printf("Value of cosine(%f): %f\n", degrees, cosineSum);
+    printf("Value of sine(%f): %f\n", degrees, sineSum);
+    printf("Value of exp(%f): %f\n", x, eSum);
+    return 0;
+}
