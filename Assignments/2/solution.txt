@@ -26,7 +26,6 @@ int main()
 Q1_b (Solution)
 
 #include <stdio.h>
-using namespace std;
 
 int main()
 {

@@ -1,15 +1,17 @@
-#include<stdio.h>
+#include <stdio.h>
 /*
- * Print all numbers divisible by ‘n’ , between 1 to 1000.
- * ‘n’ accepted from user
+ * Print all numbers divisible by ï¿½nï¿½ , between 1 to 1000.
+ * ï¿½nï¿½ accepted from user
  */
 
-int main() {
-    int n, i  = 1;
+int main()
+{
+    int n, i = 1;
     printf("Enter value of n:\t");
     scanf("%d", &n);
-    while( i <=  1000) {
-        if(!(i%n))
+    while (i <= 1000)
+    {
+        if (!(i % n))
             printf("%d\n", i);
         i++;
     }

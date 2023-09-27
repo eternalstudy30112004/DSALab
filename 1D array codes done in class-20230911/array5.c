@@ -12,8 +12,8 @@ int main()
     for (i = 0, len = 0; subject[i] != '\0'; i++, len++)
         ;
     printf("%d\n", len);
-    printf("%c", subject[14]);
-    printf("%c", subject[15]);
-    printf("%c", subject[16]);
+    printf("'%c'", subject[14]);
+    printf("|%c|", subject[15]);
+    printf("'%c'", subject[16]);
     return 0;
 }

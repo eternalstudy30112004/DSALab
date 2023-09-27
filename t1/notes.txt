@@ -1,0 +1,2 @@
+use of space in scanf indicates ignoring blank space and newline characters
+It simply means ignores next newline character

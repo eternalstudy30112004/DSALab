@@ -66,15 +66,24 @@ void reverse(char str1[])
         str1[l1 - i - 1] = temp;
     }
 }
-void subString(char str1[], char result[], short m, short n)
+char *subString(char str1[], char sub[])
 {
-    int i = m;
-    while (i < n)
+    int i = 0;
+    int consecutive = 0;
+    int l2 = length(sub);
+    int j = 0;
+    while (str1[i] != '\0')
     {
-        result[i - m] = str1[i];
+        if (str1[i] == sub[j])
+            consecutive++, j++;
+        else
+            consecutive = 0, j = 0;
+        if (consecutive == l2)
+        {
+            return &str1[i] - l2;
+        }
         i++;
     }
-    result[i - m] = '\0';
 }
 int main()
 {
@@ -92,9 +101,13 @@ int main()
     printf("%s\n", str2);
     reverse(str);
     printf("Reversing str : %s\n", str);
-    char sub[5];
-    subString(str2, sub, 0, 5);
-    printf("Substring [0, 5] str2 %s", sub);
+    char sub[] = "ello";
+    char *result = subString(str2, sub);
+
+    if (result != NULL)
+        printf("Substring found at position: %d\n", result - str2 + 1);
+    else
+        printf("Substring not found\n");
 
     return 0;
 }
