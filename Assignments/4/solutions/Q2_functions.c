@@ -1,35 +1,13 @@
-#include <stdio.h>
-typedef struct name
-{
-    char first[50];
-    char middle[50];
-    char last[50];
-} name;
-typedef struct dob
-{
-    short year;
-    short month;
-    short day;
-} dob;
-
-typedef struct student
-{
-    int roll;
-    name full_name;
-    dob DOB;
-    int marks[3];
-
-} student;
-student students[5];
+#include "Q2_functions.h"
 name getName()
 {
     name n;
     printf("Enter first name : ");
-    scanf("%s", &n.first);
+    scanf("%s", (char *)&n.first);
     printf("Enter middle name : ");
-    scanf("%s", &n.middle);
+    scanf("%s", (char *)&n.middle);
     printf("Enter last name : ");
-    scanf("%s", &n.last);
+    scanf("%s", (char *)&n.last);
     return n;
 }
 dob getDOB()
@@ -37,11 +15,11 @@ dob getDOB()
     dob DOB;
     printf("Enter birth day\n");
     printf("Enter day : ");
-    scanf("%s", &DOB.day);
+    scanf("%hd", &DOB.day);
     printf("Enter month : ");
-    scanf("%s", &DOB.month);
+    scanf("%hd", &DOB.month);
     printf("Enter year : ");
-    scanf("%s", &DOB.year);
+    scanf("%hd", &DOB.year);
     return DOB;
 }
 void displayInfo(student s)
@@ -74,20 +52,4 @@ void getStudentDetails(short i)
         printf("Subject[%s] : ", sub[j]);
         scanf("%d", &students[i].marks[j]);
     }
-}
-int main()
-{
-    short i = 0;
-    while (i < 5)
-    {
-        getStudentDetails(i);
-        i++;
-    }
-    for (short i = 0; i < 5; i++)
-    {
-        displayInfo(students[i]);
-        printf("\n");
-    }
-
-    return 0;
 }

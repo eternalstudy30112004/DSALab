@@ -1,10 +1,4 @@
-#include <stdio.h>
-int isActive = 1;
-struct distance
-{
-    int kms;
-    int m;
-} d1, d2;
+#include "Q1_functions.h"
 
 void displayDistance(char *mess, struct distance d)
 {
@@ -49,37 +43,4 @@ struct distance subDist()
         d.m = 1000 + d.m;
     }
     return d;
-}
-int main()
-{
-    do
-    {
-        displayMenu();
-        printf("Enter your choice : ");
-        scanf("%d", &isActive);
-        switch (isActive)
-        {
-        case 1:
-            getDistanceData();
-            break;
-        case 2:
-            displayDistance("Distance 1: ", d1);
-            displayDistance("Distance 2: ", d2);
-
-            break;
-        case 3:
-            displayDistance("Sum is: ", addDist());
-            break;
-        case 4:
-            displayDistance("Differnce is: ", subDist());
-            break;
-        case 5:
-            isActive = 0;
-            break;
-        }
-
-        printf("-------------------------------------\n");
-    } while (isActive);
-
-    return 0;
 }

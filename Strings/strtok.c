@@ -10,7 +10,6 @@ int main()
     while (token != NULL)
     {
         printf("Token: %s\n", token);
-        printf("String %s\n", str + 5);
         token = strtok(NULL, " ");
     }
 
