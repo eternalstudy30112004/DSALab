@@ -23,20 +23,10 @@ int main()
 {
     entry e, *ep, *eq;
     ep = &e;
-    print("e : ", e);
-    print("ep*", *ep);
     e.e = (entry *)malloc(sizeof(entry));
-    // e.x = 5;
-    print("e : ", e);
-    print("ep*", *ep);
+
     eq = f(&(e.e));
-    printf("------");
-    print("e : ", e);
-    print("ep*", *ep);
-    print("eq*", *eq);
+
     e.x = eq->x;
-    print("e : ", e);
-    print("ep*", *ep);
-    print("eq*", *eq);
-    printf("%p", *e.e);
+
 }

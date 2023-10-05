@@ -8,8 +8,10 @@ typedef struct data
     unsigned long mobile;
     struct data **p;
 } data;
+
 int main()
 {
+
     data d;
     int k;
     char *greeting = "hi";
@@ -30,4 +32,5 @@ int main()
             memcpy(d.p[i - 1], &d, sizeof(d));
         }
     }
+    printf("%u", d.mobile);
 }
