@@ -31,6 +31,8 @@ void writeMatrix(char filename[], list *mat, int row, int col)
     file = fopen(filename, "w");
     int prevRow = 0;
     node *p = *mat;
+    fprintf(file, "%d\n%d\n", row, col);
+    
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
