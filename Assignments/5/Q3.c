@@ -4,7 +4,7 @@
 typedef struct entry
 {
     double x;
-    struct entry *e;
+    struct entry    *e;
 } entry;
 typedef entry *seq;
 void f(seq *p)

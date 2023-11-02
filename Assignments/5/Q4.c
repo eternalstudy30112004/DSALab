@@ -6,7 +6,7 @@ typedef struct test
 } test;
 test *f(test ***ppp)
 {
-    test *p, **pp;
+    test *p, **pp;  
     pp = *ppp;
     p = *pp;
     *pp = (test *)malloc(2 * sizeof(test));

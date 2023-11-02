@@ -23,7 +23,7 @@ void insert(tree *r, int i)
     while (i)
     {
         if (!p)
-            q = p;
+            p = q;
         if (i % 2 && p)
             p = p->left;
         else if (p)

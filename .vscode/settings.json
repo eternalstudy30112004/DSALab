@@ -1,7 +1,16 @@
 {
     "files.associations": {
+        "*.embeddedhtml": "html",
         "q1.h": "c",
         "q2.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "cstdlib": "c",
+        "algorithm": "c",
+        "*.tcc": "c",
+        "string": "c",
+        "deque": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "limits.h": "c"
     }
 }
