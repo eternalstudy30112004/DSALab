@@ -1,0 +1,3 @@
+certutil -encodehex -f random.bin random.txt && type random.txt
+and theres this cold and lonely light
+that shines from you

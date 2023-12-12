@@ -11,6 +11,12 @@
         "deque": "c",
         "unordered_map": "c",
         "vector": "c",
-        "limits.h": "c"
+        "limits.h": "c",
+        "stack.h": "c",
+        "string.h": "c",
+        "circular.h": "c",
+        "stdlib.h": "c",
+        "list.h": "c",
+        "dll.h": "c"
     }
 }

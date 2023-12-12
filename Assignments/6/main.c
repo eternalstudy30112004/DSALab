@@ -9,7 +9,6 @@ void readMatrix(char filename[], list *matrix, int *rows, int *cols)
         printf("Error opening file !! \n");
         return;
     }
-
     fscanf(file, "%d", rows);
     fscanf(file, "%d", cols);
 
@@ -32,7 +31,7 @@ void writeMatrix(char filename[], list *mat, int row, int col)
     int prevRow = 0;
     node *p = *mat;
     fprintf(file, "%d\n%d\n", row, col);
-    
+
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
@@ -153,7 +152,7 @@ int main()
     traverse(matrix2, row2, col2);
     list *add = addMatrix(&matrix1, &matrix2, row1, col1, row2, col2);
     list *sub = diffMatrix(&matrix1, &matrix2, row1, col1, row2, col2);
-  
+
     printf("Sum: \n");
     traverse(*add, row1, col1);
     printf("Differnce: \n");

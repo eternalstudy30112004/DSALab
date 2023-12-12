@@ -12,5 +12,3 @@ void delete_beg(SLL *head);
 void delete_end (SLL *head);
 void traverse(SLL head);
 void reverse_even(SLL *head);
-
-
