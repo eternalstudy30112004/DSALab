@@ -36,7 +36,8 @@ void inorder_traverse(struct BinarySearchTree *bst, int index) {
     if (index < bst->size) {
         inorder_traverse(bst, 2 * index + 1); // Left child
         printf("%d ", bst->arr[index]);
-        inorder_traverse(bst, 2 * index + 2); // Right child
+        inorder_traverse(bst, 2 * index + 2
+         ); // Right child
     }   
 }
 
