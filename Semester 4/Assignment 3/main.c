@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <limits.h>
-
+#define MAX_EXPRESSION_LENGTH 100
 typedef struct TreeNode {
     char val;
     struct TreeNode* left;
@@ -19,16 +19,22 @@ TreeNode* createNode(char val) {
 }
 
 bool isOperator(char ch) {
-    return ch == '+' || ch == '-' || ch == '*' || ch == '/';
+    return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^';
 }
 
 int precedence(char ch) {
-    if (ch == '+' || ch == '-')
-        return 1;
-    else if (ch == '*' || ch == '/')
-        return 2;
-    else
-        return 0;
+    switch(ch){
+        case '^':
+            return 3;
+        case '*':
+        case '/':
+            return 2;
+        case '+':
+        case '-':
+            return 1;
+        default:
+            return 0;
+    }
 }
 
 TreeNode* buildTree(char* s, int start, int end) {
@@ -40,7 +46,9 @@ TreeNode* buildTree(char* s, int start, int end) {
     int level = 0;
 
     for (int i = start; i <= end; ++i) {
-        if (s[i] == '(')
+        if(s[i] == ' ')
+            continue;
+        else if (s[i] == '(')
             level++;
         else if (s[i] == ')')
             level--;
@@ -67,7 +75,7 @@ TreeNode* buildTree(char* s, int start, int end) {
     printf("Found operator '%c' at index %d with precedence %d\n", s[minPrecedenceIndex], minPrecedenceIndex, minPrecedence);
 
     TreeNode* root = createNode(s[minPrecedenceIndex]);
-
+    // as lower in parse tree => higher is the precedenc fo that opearator
     printf("Creating root node with value '%c'\n", s[minPrecedenceIndex]);
 
     root->left = buildTree(s, start, minPrecedenceIndex - 1);
@@ -88,7 +96,8 @@ void Inorder(TreeNode* root) {
 }
 
 int main() {
-    char infix_expression[] = "((a+b)*c)-(d/e)";
+    char infix_expression[MAX_EXPRESSION_LENGTH];
+    scanf("%s", infix_expression);
     int n = strlen(infix_expression);
     
     TreeNode* root = buildTree(infix_expression, 0, n - 1);
