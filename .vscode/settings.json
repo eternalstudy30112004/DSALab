@@ -17,6 +17,7 @@
         "circular.h": "c",
         "stdlib.h": "c",
         "list.h": "c",
-        "dll.h": "c"
+        "dll.h": "c",
+        "stdbool.h": "c"
     }
 }
