@@ -18,6 +18,7 @@
         "stdlib.h": "c",
         "list.h": "c",
         "dll.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "graph.h": "c"
     }
 }
